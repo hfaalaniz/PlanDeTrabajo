@@ -1,0 +1,13 @@
+[build]
+  command   = "npm run build"
+  publish   = "dist"
+
+# Node version recomendado para Vite
+[build.environment]
+  NODE_VERSION = "20"
+
+# Redirigir todas las rutas al index.html (necesario para SPA)
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200

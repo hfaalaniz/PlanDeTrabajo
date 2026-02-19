@@ -1,0 +1,212 @@
+/* Custom styles for Plan de Trabajo Pro */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  header, footer, .no-print {
+    display: none !important;
+  }
+  
+  main {
+    padding: 0 !important;
+  }
+}
+
+/* Timeline animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeline-item {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Focus styles */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Button transitions */
+button {
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Badge styles */
+.badge-priority-high {
+  @apply bg-red-100 text-red-700 border-red-200;
+}
+
+.badge-priority-medium {
+  @apply bg-amber-100 text-amber-700 border-amber-200;
+}
+
+.badge-priority-low {
+  @apply bg-emerald-100 text-emerald-700 border-emerald-200;
+}
+
+/* Status indicators */
+.status-completed {
+  @apply bg-emerald-500;
+}
+
+.status-in-progress {
+  @apply bg-blue-500;
+}
+
+.status-pending {
+  @apply bg-slate-400;
+}
+
+/* Timeline line gradient */
+.timeline-line {
+  background: linear-gradient(to bottom, 
+    rgba(99, 102, 241, 0.3) 0%,
+    rgba(99, 102, 241, 0.6) 50%,
+    rgba(99, 102, 241, 0.3) 100%
+  );
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timeline-container {
+    padding-left: 2rem;
+  }
+  
+  .timeline-line {
+    left: 0.5rem;
+  }
+}
+
+/* Animation for new items */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* PDF preview container */
+.pdf-preview {
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Tab transitions */
+.tabs-content {
+  animation: fadeInUp 0.2s ease-out;
+}
+
+/* Form field focus */
+.form-field:focus-within label {
+  color: #4f46e5;
+}
+
+/* Stats cards */
+.stat-card {
+  @apply bg-white rounded-xl p-4 shadow-sm border border-slate-100 transition-all duration-200;
+}
+
+.stat-card:hover {
+  @apply shadow-md border-indigo-200;
+}
+
+/* Priority colors for select */
+.select-priority-high [data-value="alta"] {
+  @apply text-red-600;
+}
+
+.select-priority-medium [data-value="media"] {
+  @apply text-amber-600;
+}
+
+.select-priority-low [data-value="baja"] {
+  @apply text-emerald-600;
+}
